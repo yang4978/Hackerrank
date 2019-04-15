@@ -1,4 +1,4 @@
-//https://www.hackerrank.com/challenges/c-tutorial-pointer/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+//https://www.hackerrank.com/challenges/c-tutorial-pointer/problem
 
 #include <stdio.h>
 #include <math.h>
