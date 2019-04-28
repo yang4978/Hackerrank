@@ -1,3 +1,5 @@
+//https://www.hackerrank.com/challenges/querying-the-document/problem
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
