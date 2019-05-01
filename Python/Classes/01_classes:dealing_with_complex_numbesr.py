@@ -1,5 +1,3 @@
-#https://www.hackerrank.com/challenges/class-1-dealing-with-complex-numbers/problem
-
 import math
 
 class Complex(object):
@@ -45,3 +43,8 @@ class Complex(object):
         return result
 
 if __name__ == '__main__':
+    c = map(float, input().split())
+    d = map(float, input().split())
+    x = Complex(*c)
+    y = Complex(*d)
+    print(*map(str, [x+y, x-y, x*y, x/y, x.mod(), y.mod()]), sep='\n')
