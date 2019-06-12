@@ -22,6 +22,27 @@ def biggerIsGreater(w):
 
     return "no answer"
 
+    # w = list(w)
+    # len_w = len(w)
+    # suffix  = []
+    # for i in w[::-1]:
+    #     if(suffix==[]):
+    #         suffix.append(i)
+    #     elif(i>=suffix[-1]):
+    #         suffix.append(i)
+    #     else:
+    #         break
+    # len_suffix = len(suffix)
+    # if(len_suffix==len_w):
+    #     return 'no answer'
+    # else:
+    #     pivot = w[-1-len_suffix]
+    # for i in range(len_suffix):
+    #     if(suffix[i]>pivot):
+    #         suffix[i],pivot = pivot,suffix[i]
+    #         break
+    # return ''.join(w[:len_w-len_suffix-1]+[pivot]+suffix)
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
