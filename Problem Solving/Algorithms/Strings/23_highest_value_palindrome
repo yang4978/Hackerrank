@@ -1,0 +1,66 @@
+#https://www.hackerrank.com/challenges/richie-rich/problem
+
+ #!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the highestValuePalindrome function below.
+def highestValuePalindrome(s, n, k):
+    s = list(s)
+    len_s = len(s)
+    num_asymmetry = 0
+    num_not_max = len_s - s.count('9')
+    asymmetry_index = []
+    if(k>=num_not_max):
+        return '9'*len_s
+    for i in range(len_s//2):
+        if(s[i]!=s[len_s-i-1]):
+            num_asymmetry += 1
+            asymmetry_index.append(i)
+            s[i] = max(s[i],s[len_s-i-1])
+            s[len_s-i-1] = max(s[i],s[len_s-i-1])           
+    if(k<num_asymmetry):
+        return '-1'
+    operation_num = 0;
+    i = 0;
+    while(operation_num<k-num_asymmetry):
+        if(k-num_asymmetry-operation_num>=2):
+            while(s[i]=='9'):
+                i += 1
+            s[i] = '9'
+            s[len_s-i-1] = '9'
+            operation_num += 1 if i in asymmetry_index else 2
+        else:
+            while(s[i]=='9' or i not in asymmetry_index and i<len(s)//2):
+                i += 1
+                
+            if(i==len(s)//2 and len(s)%2==0):
+                break
+
+            s[i] ='9'
+            s[len_s-i-1] = '9'
+            break
+
+    return ''.join(s)
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    s = input()
+
+    result = highestValuePalindrome(s, n, k)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
